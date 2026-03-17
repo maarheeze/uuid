@@ -1,0 +1,30 @@
+{
+    "name": "maarheeze/uuid",
+    "type": "library",
+    "license": "MIT",
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Maarheeze\\Uuid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "ramsey/uuid": "^4.9"
+    },
+    "require-dev": {
+        "maarheeze/phpcs": "^1.0",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12"
+    }
+}

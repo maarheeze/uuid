@@ -1,5 +1,6 @@
 {
     "name": "maarheeze/uuid",
+    "description": "simple uuid value object",
     "type": "library",
     "license": "MIT",
     "config": {

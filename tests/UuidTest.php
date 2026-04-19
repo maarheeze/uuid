@@ -93,6 +93,18 @@ class UuidTest extends TestCase
         );
     }
 
+    public function testEqualsReturnsFalseForDifferentUuid(): void
+    {
+        self::assertFalse(Uuid::generate()->equals(Uuid::generate()));
+    }
+
+    public function testEqualsReturnsTrueForSameUuid(): void
+    {
+        $uuid = Uuid::generate();
+
+        self::assertTrue($uuid->equals(Uuid::fromString($uuid->toString())));
+    }
+
     public function testImplementsUuidInterface(): void
     {
         self::assertInstanceOf(UuidInterface::class, Uuid::generate());

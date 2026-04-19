@@ -18,5 +18,7 @@ interface UuidInterface extends JsonSerializable, Stringable
      */
     public static function jsonDeserialize(array $data): static;
 
+    public function equals(self $other): bool;
+
     public function toString(): string;
 }

@@ -20,6 +20,11 @@ final readonly class Uuid implements UuidInterface
         return $this->uuid->toString();
     }
 
+    public function equals(UuidInterface $other): bool
+    {
+        return $this->toString() === $other->toString();
+    }
+
     public static function fromString(string $uuid): static
     {
         try {

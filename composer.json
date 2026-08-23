@@ -20,12 +20,12 @@
         }
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "ramsey/uuid": "^4.9"
     },
     "require-dev": {
-        "maarheeze/phpcs": "^1.0",
+        "maarheeze/phpcs": "^2.0",
         "phpstan/phpstan": "^2.1",
-        "phpunit/phpunit": "^12"
+        "phpunit/phpunit": "^13"
     }
 }

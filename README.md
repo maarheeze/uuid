@@ -2,10 +2,6 @@
 
 A simple UUID value object for PHP.
 
-## Requirements
-
-- PHP 8.2+
-
 ## Installation
 
 ```bash

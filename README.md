@@ -58,15 +58,15 @@ all return a `PlayerId`.
 
 Two suggestions:
 
-- Mark the class `final`, so the id type stays a single type. Extending it works
-either way — the factories use `new static()`, so a subclass constructs and
-returns itself — but a subtype hierarchy is rarely what you want from an id.
+- Mark the class `final`, so the id type stays a single type — a subtype
+hierarchy is rarely what you want from an id.
 - Mark the class `readonly`, so it behaves as a value object.
 
 `PlayerId` is deliberately **not** an `instanceof Uuid`, and two id classes are
 unrelated to each other by type. `equals()` follows suit: it is false unless both
 sides are the same class, so a `PlayerId` never equals a `GameId` even when they
-hold the same value.
+hold the same value. That holds down a hierarchy too — if you do extend an id
+class, the subclass never equals its parent, in either direction.
 
 ## License
 

@@ -6,6 +6,7 @@ namespace Tests;
 
 use Maarheeze\Uuid\Uuid;
 use PHPUnit\Framework\TestCase;
+use Tests\Fixtures\AccountId;
 use Tests\Fixtures\AdminAccountId;
 use Tests\Fixtures\GameId;
 use Tests\Fixtures\PlayerId;
@@ -59,5 +60,19 @@ class IsUuidTest extends TestCase
         $uuid = Uuid::generate();
 
         self::assertFalse($uuid->equals(PlayerId::fromString($uuid->toString())));
+    }
+
+    public function testAParentIdIsNotEqualToAChildIdWithTheSameValue(): void
+    {
+        $accountId = AccountId::generate();
+
+        self::assertFalse($accountId->equals(AdminAccountId::fromString($accountId->toString())));
+    }
+
+    public function testAChildIdIsNotEqualToAParentIdWithTheSameValue(): void
+    {
+        $adminAccountId = AdminAccountId::generate();
+
+        self::assertFalse($adminAccountId->equals(AccountId::fromString($adminAccountId->toString())));
     }
 }

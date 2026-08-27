@@ -10,7 +10,7 @@ use Throwable;
 
 trait IsUuid
 {
-    private function __construct(
+    final private function __construct(
         private readonly RamseyUuidInterface $uuid,
     ) {
     }
@@ -28,7 +28,7 @@ trait IsUuid
     public static function fromString(string $uuid): static
     {
         try {
-            return new self(RamseyUuid::fromString($uuid));
+            return new static(RamseyUuid::fromString($uuid));
         } catch (Throwable $throwable) {
             throw new UuidException('Invalid uuid string', 0, $throwable);
         }
@@ -52,7 +52,7 @@ trait IsUuid
 
     public static function generate(): static
     {
-        return new self(RamseyUuid::uuid7());
+        return new static(RamseyUuid::uuid7());
     }
 
     public function toString(): string

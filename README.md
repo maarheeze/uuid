@@ -58,11 +58,9 @@ all return a `PlayerId`.
 
 Two suggestions:
 
-- Mark the class `final`: the factories use `new self()`, so if
-you ever extend a `PlayerId`, the subclass inherits a `generate()` that hands
-back a `PlayerId` and the `static` return type throws a TypeError. `final` rules
-that out, and PHPStan points it out at level max. Leaving the class open is fine
-if you never extend it.
+- Mark the class `final`, so the id type stays a single type. Extending it works
+either way — the factories use `new static()`, so a subclass constructs and
+returns itself — but a subtype hierarchy is rarely what you want from an id.
 - Mark the class `readonly`, so it behaves as a value object.
 
 `PlayerId` is deliberately **not** an `instanceof Uuid`, and two id classes are

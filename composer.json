@@ -27,5 +27,10 @@
         "maarheeze/phpcs": "^2.0",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^13"
+    },
+    "suggest": {
+        "maarheeze/uuid-laravel": "Eloquent cast and primary key support for Laravel models",
+        "maarheeze/uuid-livewire": "Keeps typed uuids as Livewire component properties across requests",
+        "maarheeze/uuid-symfony": "Serializer normalizer for typed uuids in Symfony"
     }
 }
